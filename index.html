@@ -122,49 +122,140 @@
       let ficha = {
         personagem: {
           foto: 'https://pa1.aminoapps.com/7996/8191b6b6135ca1c20f1974e8c58a37c9b375d0f4r1-540-500_hq.gif',
-          nome: "Zenith Beifong D'Weller",
+          nome: 'Rafael DeWitt',
           nivel: 3,
-          inspiração: 3,
-          hpAtual: 50,
-          hp: 10,
-          sanidadeAtual: 18,
-          sanidade: 25,
+          inspiração: 0,
+          hpAtual: 103,
+          hp: 40,
+          sanidadeAtual: 65,
+          sanidade: 65,
           atributos: {
-            força: 10,
-            inteligência: 30,
-            destreza: 24,
-            sabedoria: 10,
-            constituição: 10,
-            carisma: 10,
+            força: 4,
+            inteligência: 19,
+            destreza: 9,
+            sabedoria: 35,
+            constituição: 9,
+            carisma: 9,
           },
           pericias: {
             'Acrobacia/destreza': 0,
             'Atletismo/destreza': 0,
             'Atuação/carisma': 0,
             'Conhecimento/inteligência': 0,
-            'Cura/constituição': 5,
-            'Diplomacia/carisma': 0,
+            'Cura/constituição': 20,
+            'Diplomacia/carisma': 4,
             'Enganação/carisma': 0,
-            'Furtividade/destreza': 0,
+            'Furtividade/destreza': 3,
             'Identificar Magia/inteligência': 5,
-            'Iniciativa/destreza': 0,
+            'Iniciativa/destreza': 3,
             'Intimidação/carisma': 0,
             'Intuição/carisma': 5,
             'Jogatina/carisma': 0,
             'Ladinagem/destreza': 0,
             'Ofício/inteligência': 0,
-            'Percepção/sabedoria': 5,
+            'Percepção/sabedoria': 4,
             'Pontaria/destreza': 5,
-            'Sobrevivência/sabedoria': 0,
+            'Sobrevivência/sabedoria': 3,
           },
         },
         reliquias: [
           {
-            nome: 'Traje de Cavaleiro de Alta Patente em Decutor',
+            nome: 'Poção de Cura Pós Morte',
+            efeitos: [
+              {
+                descrição: 'Cura um aliado em 3d12 + 50% da constituição dele',
+                dados: '3d12 + cura + poção + <50% constituição do alvo>',
+              },
+            ],
+          },
+          {
+            nome: 'O Puro Terror Evolutivo',
+            efeitos: [
+              {
+                descrição:
+                  'Remove envenenamento e dano mitigado e cura 25% do Pv Máx do alvo',
+                dados: '<25% do HP Máximo do alvo>',
+              },
+            ],
+          },
+          {
+            nome: 'Lavanda',
+            efeitos: [
+              {
+                descrição: 'Concede a quem beber +10 de dano e 2d20 de cura',
+                dados: '2d20 + cura + poção',
+              },
+              {
+                descrição:
+                  'Cura o portador da poção em 50% do dano causado por quem bebeu',
+                dados: '<Dano causado / 2>',
+              },
+            ],
+          },
+          {
+            nome: 'Silêncio Eterno',
+            efeitos: [
+              {
+                descrição:
+                  'Percursor do Som: Cria uma onda sonora que cura aliados em 4d20 e aumenta a resistência mágica deles em 5pts por 3 turnos.',
+                dados: '4d20 + cura',
+              },
+              {
+                descrição:
+                  'Se o portador não tiver nenhuma relíquia de dano em seu inventário, a cura dessa relíquia irá para 10d20',
+                dados: '10d20 + cura',
+              },
+            ],
+          },
+          {
+            nome: 'Contos dos Pecados de Galeem',
+            efeitos: [
+              {
+                descrição: 'Energia da Cidade de Prata: Dano em alvo único',
+                dados: '2d10 + 450% inteligência',
+              },
+              {
+                descrição: 'Energia da Cidade de Prata: Cura um aliado',
+                dados: '2d10 + cura + 50% inteligência',
+              },
+              {
+                descrição: 'Ritual da Razão: Concede +20 de HP Máximo ao grupo',
+                dados: '-',
+              },
+              {
+                descrição:
+                  'Ritual da Inspiração: Concede +5 de Defesa ao grupo',
+                dados: '-',
+              },
+              {
+                descrição: 'Ritual da Elevação: Concede +10 de Dano ao grupo',
+                dados: '-',
+              },
+              {
+                descrição:
+                  'Ritual do Silêncio: Inimigos não podem usar habilidades mágicas por 1 turno',
+                dados: '-',
+              },
+              {
+                descrição:
+                  'Ritual da Noite: Dobra os efeitos dos amuletos aliados (metade para amuletos de cura)',
+                dados: '-',
+              },
+              {
+                descrição:
+                  'Ritual da: Inimigos não podem usar habilidades mágicas por 1 turno',
+                dados: '-',
+              },
+            ],
             atributos: {
-              vida: 10,
-              defesa: 5,
+              cura: 10,
               ap: 5,
+              força: 5,
+              inteligência: 20,
+              sanidade: 40,
+              vida: 35,
+              sabedoria: 5,
+              poções: 15,
             },
           },
           {
@@ -174,138 +265,20 @@
             },
           },
           {
-            nome: 'Felix Escarlate: O Reluzente Felino Intergaláctico',
+            nome: 'Donzela Amada',
             atributos: {
-              vida: 15,
-              ap: 5,
-              passivo: [
-                'Sempre que Zenith ataca, Felix ataca causando +100% do dano como dano mágico',
-                'Pilar Da Criação: quando a vida máxima de Zenith ficar inferior a 25pts, Felix terá um aumento de dano de 4500% de dano, se o inimigo por eliminando por Felix, Zenith será curado em 100% da Vida máxima dele.',
-              ],
+              cura: 5,
+              sobrecura: 25,
             },
           },
           {
-            nome: 'Felis Catus',
+            nome: 'Traje de Aether',
             atributos: {
-              vida: 15,
-              ap: 20,
-              destreza: 5,
+              cura: 15,
               inteligência: 5,
-              '% roubo de vida mágico': 10,
-              passivo: [
-                'Todo dano mágico causado por Zenith se acumulará no inimigo atingido podendo chegar em até 300pts de dano, atingindo esse limite o próximo dano de Zenith causa 15% do HP restante do alvo como bônus de dano mágico, além de fortalecer o dano de Zenith em 20pts até o final do combate.',
-
-                'Quando o alvo estiver com menos de 10% de HP, Zenith executa o alvo automaticamente, recuperando 15pts de HP e ganhando 5pts de dano mágico permanente.',
-
-                'Quando equipado Zenith poderá se vaporizar e se teletransportar para qualquer lugar que já tenha passado ou que ele consiga ver, além de também conseguir pular bem alto e cair sempre em pé.',
-              ],
+              defesa: 5,
+              vida: 15,
             },
-          },
-          {
-            nome: 'Evoca Rajamixer',
-            efeitos: [
-              {
-                descrição:
-                  'Ataque básico: Dispara um projétil de cristal que causa de dano mágico',
-                dados: '3d8',
-              },
-              {
-                descrição:
-                  'Lua De Cristal: Evoca o lord lunar que percorre um grande percurso no campo de batalha arrastando tudo e todos que tiverem em seu caminho, causando dano mágico a todos os seres atingidos',
-                dados: '5d12',
-              },
-            ],
-          },
-          {
-            nome: 'Câmera Aprimorada',
-            efeitos: [
-              {
-                descrição:
-                  'Ao tirar uma foto dos inimigos causa dano a eles e conecta todos os inimigos atingidos por 1 turno. O próximo dano que algum dos inimigos conectados receber será causado aos outros por 50% do dano original, depois desse efeito ser ativado a conexão se desfaz.',
-                dados: '8d20',
-              },
-            ],
-          },
-          {
-            nome: 'Ladrão De Almas',
-            efeitos: [
-              {
-                descrição:
-                  'Efetua um disparo mágico que causa 2d8 no primeiro inimigo atingido.Depois de acertar um inimigo aumenta o dano do disparo em 5pts permanente. ',
-                dados: '2d8 + <stacks * 5>',
-              },
-            ],
-          },
-          {
-            nome: 'Rosa de Vidro Negra',
-            atributos: {
-              passivo: [
-                'seus ataques ganham +25pts de dano e ganha 1 acúmulo de "Estilhaço De Neblina".',
-                'Após acumular 3 Estilhaços De Neblina, o próximo ataque causa 6d20 de dano bônus ao inimigo atingido e a equipe ganha +30pts de dano.',
-              ],
-            },
-          },
-          {
-            nome: 'A Voz Daquele Que Já Se Foi',
-            efeitos: [
-              {
-                descrição:
-                  'Ao tocar essa ocarina coloca em campo o Espírito Único, diminuindo a dt dos inimigos em 100% e aumentando o dano dos aliados em 2 dados.',
-                dados: '-',
-              },
-              {
-                descrição:
-                  'Após 3 turnos o Espírito sobe aos céus e cura os aliados até 70% da vida máxima, e aumenta o próximo dano do portador da ocarina em 100% com base na cura realizada pelo espírito.',
-                dados: '-',
-              },
-            ],
-          },
-          {
-            nome: 'Lâmina Proibida Do Mundo Sombrio Extinto',
-            efeitos: [
-              {
-                descrição:
-                  'Dano básico: o portador se teleporta até o inimigo, o golpeia e retorna para o local de origem. [Acumula 1 marca]',
-                dados: '3d12',
-              },
-              {
-                descrição:
-                  'Arte Exilada De Montuna: Após acumular 3 marcas, a lâmina de Montuna causa dano com base no HP Máximo do alvo.',
-                dados: ' 4d10 + <15% do HP máximo do alvo>',
-              },
-            ],
-          },
-          {
-            nome: 'Coruja Mecânica',
-            atributos: {
-              passivo: [
-                'O usuário equipado com essa relíquia causa critico em todos disparos de longa distância.',
-              ],
-            },
-          },
-          {
-            nome: 'Arcanjo Renegado',
-            efeitos: [
-              {
-                descrição: 'Dano básico mágico',
-                dados: '2d10',
-              },
-              {
-                descrição:
-                  'Execução Celestial: faz com que um enorme feixe de luz caia sobre os inimigos',
-                dados: '10d12',
-              },
-            ],
-          },
-          {
-            nome: 'Rezar sem Voz',
-            efeitos: [
-              {
-                descrição:
-                  'O portador invoca uma enorme baleia de lava que sai do solo e cai encima dos inimigos causando stun por 1 turno.',
-                dados: '6d12',
-              },
-            ],
           },
         ],
       };
