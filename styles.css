@@ -1,0 +1,212 @@
+* {
+  box-sizing: border-box;
+  border-spacing: 0px;
+}
+
+#status .forca > td {
+  background: #f005;
+}
+#status .inteligencia > td {
+  background: #007fff59;
+}
+#status .destreza > td {
+  background: #0f05;
+  /* color: #000; */
+}
+#status .sabedoria > td {
+  background: #8b451359;
+}
+#status .constituicao > td {
+  background: #ff05;
+  /* color: #000; */
+}
+#status .carisma > td {
+  background: #80008059;
+}
+
+.força > td:nth-child(2) {
+  background: #f005;
+}
+.inteligência > td:nth-child(2) {
+  background: #007fff59;
+}
+.destreza > td:nth-child(2) {
+  background: #0f05;
+  /* color: #000; */
+}
+.sabedoria > td:nth-child(2) {
+  background: #8b451359;
+}
+.constituição > td:nth-child(2) {
+  background: #ff05;
+  /* color: #000; */
+}
+.carisma > td:nth-child(2) {
+  background: #80008059;
+}
+
+#nome {
+  font-size: 1.5rem;
+  background: #000;
+  border: 5px double white;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  color: black;
+  height: 100vh;
+  width: auto;
+
+  background: 100% center no-repeat
+    url('https://p1.pxfuel.com/preview/955/426/445/paper-old-texture-parchment.jpg');
+  background-size: cover;
+}
+
+main {
+  height: 100%;
+  padding: 50px 10px;
+
+  gap: 50px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  overflow-y: auto;
+
+  background: #fff5;
+  box-shadow: inset 0px -0px 100px 10px #000;
+}
+
+#infos {
+  display: flex;
+  flex: 1 1 750px;
+  /* flex: 1 1 auto; */
+  gap: 0 10px;
+  justify-content: space-evenly;
+}
+
+#imagem {
+  flex: 1 1;
+  text-align: center;
+  min-width: 250px;
+}
+#imagem > img {
+  max-width: 300px;
+  width: 100%;
+}
+
+#itens,
+#reliquias {
+  overflow-y: auto;
+  max-height: 67%;
+  border: 5px double black;
+  direction: rtl;
+}
+#itens::-webkit-scrollbar,
+#reliquias::-webkit-scrollbar {
+  width: 5px;
+  background: #fff;
+}
+#itens::-webkit-scrollbar-thumb,
+#reliquias::-webkit-scrollbar-thumb {
+  background: #000;
+}
+#itens > table,
+#reliquias > table {
+  max-width: 800px;
+  width: 100%;
+  direction: ltr;
+}
+#itens table td > p,
+#reliquias table td > p {
+  text-align: center;
+  padding: 0px 5px;
+}
+
+#reliquias table td:not(:first-of-type) {
+  padding: 0px;
+}
+#reliquias table td > p {
+  margin: 0;
+  padding: 5px;
+}
+
+#reliquias table td > p:not(:last-of-type) {
+  border-bottom: 3px solid black;
+}
+
+#status {
+  margin-top: -5px;
+}
+#status table {
+  margin: 0px auto;
+}
+#status > table:first-of-type {
+  margin: 0px auto;
+  box-shadow: 5px 0px 15px 1px #000;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+table {
+  color: #fff;
+  width: 100%;
+  max-width: 300px;
+  height: fit-content;
+  box-shadow: 5px 5px 15px 1px #000;
+  font-weight: bold;
+}
+
+#itens th,
+#reliquias th {
+  position: sticky;
+  top: 0;
+}
+
+td {
+  padding: 5px;
+  text-align: center;
+  width: min-content;
+  color: #000;
+  border: 1px solid black;
+  font-size: 1.15rem;
+}
+
+th {
+  border: 1px solid black;
+  font-size: 1.3rem;
+}
+
+table > tbody > tr > td:nth-child(2):hover {
+  cursor: pointer;
+}
+
+table tbody tr:nth-child(odd) {
+  background-color: #eee;
+}
+table tbody tr:nth-child(even),
+table th {
+  background-color: #ccc;
+}
+
+.reliquia > td {
+  background: #fff;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.reliquia {
+  outline: 2px solid black;
+}
+
+.reliquia td:not(:first-of-type) {
+  outline: 5px solid white;
+}
+
+table tr th {
+  background: #000;
+}

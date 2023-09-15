@@ -1,0 +1,83 @@
+<div class="pericias">
+          <table>
+            <thead>
+              <tr>
+                <th colspan="2">Perícias</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="destreza">
+                <td>Acrobacia</td>
+                <td id="acr">0</td>
+              </tr>
+              <tr class="destreza">
+                <td>Atletismo</td>
+                <td id="atl">0</td>
+              </tr>
+              <tr class="carisma">
+                <td>Atuação</td>
+                <td id="atu">0</td>
+              </tr>
+              <tr class="inteligencia">
+                <td>Conhecimento</td>
+                <td id="conhecimento">0</td>
+              </tr>
+              <tr class="constituicao">
+                <td>Cura</td>
+                <td id="cur">20</td>
+              </tr>
+              <tr class="carisma">
+                <td>Diplomacia</td>
+                <td id="dip">4</td>
+              </tr>
+              <tr class="carisma">
+                <td>Enganação</td>
+                <td id="eng">0</td>
+              </tr>
+              <tr class="destreza">
+                <td>Furtividade</td>
+                <td id="fur">3</td>
+              </tr>
+              <tr class="inteligencia">
+                <td>Identificar Magia</td>
+                <td id="ide-mag">0</td>
+              </tr>
+              <tr class="destreza">
+                <td>Iniciativa</td>
+                <td id="ini">3</td>
+              </tr>
+              <tr class="carisma">
+                <td>Intimidação</td>
+                <td id="inti">0</td>
+              </tr>
+              <tr class="carisma">
+                <td>Intuição</td>
+                <td id="intu">0</td>
+              </tr>
+              <tr class="carisma">
+                <td>Jogatina</td>
+                <td id="jog">0</td>
+              </tr>
+              <tr class="destreza">
+                <td>Ladinagem</td>
+                <td id="lad">0</td>
+              </tr>
+              <tr class="inteligencia">
+                <td>Ofício</td>
+                <td id="ofi">0</td>
+              </tr>
+              <tr class="sabedoria">
+                <td>Percepção</td>
+                <td id="per">4</td>
+              </tr>
+              <tr class="destreza">
+                <td>Pontaria</td>
+                <td id="pon">0</td>
+              </tr>
+              <tr class="sabedoria">
+                <td>Sobrevivência</td>
+                <td id="sob">3</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
