@@ -83,7 +83,6 @@ for (var i = 0; i < reliquiasComEfeitos.length; i++) {
 
 let { personagem } = ficha;
 let { atributos, pericias } = personagem;
-
 //PREPARA OS CAMPOS A INSERIR NA TABELA "PERÍCIAS"
 let periciasTable = document.getElementById('pericias');
 fields = Object.keys(pericias);
@@ -99,12 +98,14 @@ fields.forEach((field) => {
   linha.className = atributo;
   campo.innerHTML = pericia;
 
-  // console.log(pericias[field])
-  // console.log(`${atributos[atributo]}-${valoresTotal[atributo]}-${fields[pericia]}`);
+  let periciaExtra = !valoresTotal[pericia.toLowerCase()]
+    ? 0
+    : valoresTotal[pericia.toLowerCase()];
 
-  valor.innerHTML = !valoresTotal[atributo]
-    ? atributos[atributo] + pericias[field]
-    : atributos[atributo] + valoresTotal[atributo] + pericias[field];
+  let atributoExtra = !valoresTotal[atributo] ? 0 : valoresTotal[atributo];
+
+  valor.innerHTML =
+    atributos[atributo] + pericias[field] + periciaExtra + atributoExtra;
 });
 
 document.getElementById('foto').src = personagem.foto;
