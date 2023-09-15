@@ -46,6 +46,7 @@ ficha.reliquias.forEach((reliquia) => {
 
     if (atributo === 'passivo') {
       reliquia.atributos[atributo].forEach((passivo) => {
+        pAtributo = document.createElement('p');
         pAtributo.innerHTML = `${passivo}`;
         valor.appendChild(pAtributo);
       });
