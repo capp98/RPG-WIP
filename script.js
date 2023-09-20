@@ -1,9 +1,26 @@
 let primarias = document.getElementsByClassName('pericias')[0];
 let secundarias = document.getElementsByClassName('atributos')[0];
 
+async function foo() {
+  let obj;
+
+  const res = await fetch(
+    'https://anxious-puce-cloak.cyclic.cloud/chars/rafael%20dewitt'
+  );
+
+  obj = await res.json();
+
+  return obj[0];
+}
+
+let ficha = await foo();
+
+// console.log(ficha)
+
 // PREPARA OS DADOS DA FICHA
-ficha.reliquias.sort(ordenarNome);
 let valoresTotal = {};
+
+ficha.reliquias.sort(ordenarNome);
 
 ficha.reliquias.forEach(({ atributos }) => {
   if (!atributos) return;
@@ -81,8 +98,7 @@ for (var i = 0; i < reliquiasComEfeitos.length; i++) {
   }
 }
 
-let { personagem } = ficha;
-let { atributos, pericias } = personagem;
+let { atributos, pericias } = ficha;
 //PREPARA OS CAMPOS A INSERIR NA TABELA "PERÍCIAS"
 let periciasTable = document.getElementById('pericias');
 fields = Object.keys(pericias);
@@ -108,18 +124,28 @@ fields.forEach((field) => {
     atributos[atributo] + pericias[field] + periciaExtra + atributoExtra;
 });
 
-document.getElementById('foto').src = personagem.foto;
-document.getElementById('foto').alt = `Imagem do ${personagem.nome}`;
-document.getElementById('nome').innerHTML = personagem.nome;
+document.getElementById('foto').src = ficha.foto;
+document.getElementById('foto').alt = `Imagem do ${ficha.nome}`;
+document.getElementById('nome').innerHTML = ficha.nome;
 document.getElementById('dt').innerHTML = 10 + atributos.destreza;
 
-document.getElementById('hp').innerHTML = `${personagem.hpAtual}/${
-  personagem.hp + atributos.constituição * 2 + valoresTotal.vida
-}`;
+let vidaEmPorcentagem =
+  1.0 + (valoresTotal['% de vida'] ? valoresTotal['% de vida'] / 100 : 0);
 
-document.getElementById(
-  'sanidade'
-).innerHTML = `${personagem.sanidadeAtual}/${personagem.sanidade}`;
+let hpMaximo =
+  (40 + atributos.constituição * 2 + valoresTotal.vida) * vidaEmPorcentagem;
+
+document.getElementById('hp').innerHTML = `${
+  ficha.hpatual > hpMaximo ? hpMaximo : ficha.hpatual
+}/${hpMaximo}`;
+
+document.getElementById('sanidade').innerHTML = `${
+  ficha.sanidadeatual > ficha.sanidade ? ficha.sanidade : ficha.sanidadeatual
+}/${
+  valoresTotal.sanidade
+    ? ficha.sanidade + valoresTotal.sanidade
+    : ficha.sanidade
+}`;
 
 document.getElementById('for').innerHTML = !valoresTotal['força']
   ? atributos['força']
@@ -145,7 +171,21 @@ document.getElementById('car').innerHTML = !valoresTotal.carisma
   ? atributos.carisma
   : atributos.carisma + valoresTotal.carisma;
 
-document.getElementById('ins').innerHTML = personagem['inspiração'];
+document.getElementById('inspiracao').innerHTML = ficha.inspiracao;
+
+valoresTotal.armadura = valoresTotal.armadura ? valoresTotal.armadura : 0;
+
+valoresTotal['resistência mágica'] = valoresTotal['resistência mágica']
+  ? valoresTotal['resistência mágica']
+  : 0;
+
+valoresTotal.defesa = valoresTotal.defesa ? valoresTotal.defesa : 0;
+
+document.getElementById('armadura').innerHTML =
+  valoresTotal.armadura + valoresTotal.defesa;
+
+document.getElementById('resistencia-magica').innerHTML =
+  valoresTotal['resistência mágica'] + valoresTotal.defesa;
 
 function ordenarNome(a, b) {
   const nomeA = a.nome.toUpperCase();

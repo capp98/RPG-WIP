@@ -29,6 +29,16 @@
                 <td id="hp">103/103</td>
                 <td id="sanidade">65/65</td>
               </tr>
+              <tr>
+                <th>Armadura</th>
+                <th>Res. Mágica</th>
+                <th>Inspiração</th>
+              </tr>
+              <tr>
+                <td id="armadura">0</td>
+                <td id="resistencia-magica">0</td>
+                <td id="inspiracao">0</td>
+              </tr>
             </tbody>
           </table>
           <table>
@@ -118,170 +128,5 @@
         </table>
       </div>
     </main>
-    <script>
-      let ficha = {
-        personagem: {
-          foto: 'https://pa1.aminoapps.com/7996/8191b6b6135ca1c20f1974e8c58a37c9b375d0f4r1-540-500_hq.gif',
-          nome: 'Rafael DeWitt',
-          nivel: 3,
-          inspiração: 0,
-          hpAtual: 103,
-          hp: 40,
-          sanidadeAtual: 65,
-          sanidade: 65,
-          atributos: {
-            força: 4,
-            inteligência: 19,
-            destreza: 9,
-            sabedoria: 35,
-            constituição: 9,
-            carisma: 9,
-          },
-          pericias: {
-            'Acrobacia/destreza': 0,
-            'Atletismo/destreza': 0,
-            'Atuação/carisma': 0,
-            'Conhecimento/inteligência': 0,
-            'Cura/constituição': 20,
-            'Diplomacia/carisma': 4,
-            'Enganação/carisma': 0,
-            'Furtividade/destreza': 3,
-            'Identificar Magia/inteligência': 5,
-            'Iniciativa/destreza': 3,
-            'Intimidação/carisma': 0,
-            'Intuição/carisma': 5,
-            'Jogatina/carisma': 0,
-            'Ladinagem/destreza': 0,
-            'Ofício/inteligência': 0,
-            'Percepção/sabedoria': 4,
-            'Pontaria/destreza': 5,
-            'Sobrevivência/sabedoria': 3,
-          },
-        },
-        reliquias: [
-          {
-            nome: 'Poção de Cura Pós Morte',
-            efeitos: [
-              {
-                descrição: 'Cura um aliado em 3d12 + 50% da constituição dele',
-                dados: '3d12 + cura + poção + <50% constituição do alvo>',
-              },
-            ],
-          },
-          {
-            nome: 'O Puro Terror Evolutivo',
-            efeitos: [
-              {
-                descrição:
-                  'Remove envenenamento e dano mitigado e cura 25% do Pv Máx do alvo',
-                dados: '<25% do HP Máximo do alvo>',
-              },
-            ],
-          },
-          {
-            nome: 'Lavanda',
-            efeitos: [
-              {
-                descrição: 'Concede a quem beber +10 de dano e 2d20 de cura',
-                dados: '2d20 + cura + poção',
-              },
-              {
-                descrição:
-                  'Cura o portador da poção em 50% do dano causado por quem bebeu',
-                dados: '<Dano causado / 2>',
-              },
-            ],
-          },
-          {
-            nome: 'Silêncio Eterno',
-            efeitos: [
-              {
-                descrição:
-                  'Percursor do Som: Cria uma onda sonora que cura aliados em 4d20 e aumenta a resistência mágica deles em 5pts por 3 turnos.',
-                dados: '4d20 + cura',
-              },
-              {
-                descrição:
-                  'Se o portador não tiver nenhuma relíquia de dano em seu inventário, a cura dessa relíquia irá para 10d20',
-                dados: '10d20 + cura',
-              },
-            ],
-          },
-          {
-            nome: 'Contos dos Pecados de Galeem',
-            efeitos: [
-              {
-                descrição: 'Energia da Cidade de Prata: Dano em alvo único',
-                dados: '2d10 + 450% inteligência',
-              },
-              {
-                descrição: 'Energia da Cidade de Prata: Cura um aliado',
-                dados: '2d10 + cura + 50% inteligência',
-              },
-              {
-                descrição: 'Ritual da Razão: Concede +20 de HP Máximo ao grupo',
-                dados: '-',
-              },
-              {
-                descrição:
-                  'Ritual da Inspiração: Concede +5 de Defesa ao grupo',
-                dados: '-',
-              },
-              {
-                descrição: 'Ritual da Elevação: Concede +10 de Dano ao grupo',
-                dados: '-',
-              },
-              {
-                descrição:
-                  'Ritual do Silêncio: Inimigos não podem usar habilidades mágicas por 1 turno',
-                dados: '-',
-              },
-              {
-                descrição:
-                  'Ritual da Noite: Dobra os efeitos dos amuletos aliados (metade para amuletos de cura)',
-                dados: '-',
-              },
-              {
-                descrição:
-                  'Ritual da: Inimigos não podem usar habilidades mágicas por 1 turno',
-                dados: '-',
-              },
-            ],
-            atributos: {
-              cura: 10,
-              ap: 5,
-              força: 5,
-              inteligência: 20,
-              sanidade: 40,
-              vida: 35,
-              sabedoria: 5,
-              poções: 15,
-            },
-          },
-          {
-            nome: 'Armadura Leve',
-            atributos: {
-              defesa: 2,
-            },
-          },
-          {
-            nome: 'Donzela Amada',
-            atributos: {
-              cura: 5,
-              sobrecura: 25,
-            },
-          },
-          {
-            nome: 'Traje de Aether',
-            atributos: {
-              cura: 15,
-              inteligência: 5,
-              defesa: 5,
-              vida: 15,
-            },
-          },
-        ],
-      };
-    </script>
   </body>
 </html>
